@@ -63,7 +63,8 @@ public class Main {
                             System.out.println("Que estacion quiere escuchar (1-12) ?");
                             String stationno = input.nextLine();
                             String station = input.nextLine();
-                            int change = Integer.valueOf(station);
+                            int change1 = Integer.valueOf(station);
+                            myRadio.getFavorito(change1);
                             
 
                            // System.out.print( "La estacion que seleciono es la" +myRadio.getFavorito(station)));
