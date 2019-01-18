@@ -4,15 +4,15 @@ public class Radio implements iRadio{
     private boolean encendido;
     private double  estacion;
     private boolean isAM;
-    private ArrayList<Double> estacionesFavAM;
-    private ArrayList<Double> estacionesFavFM;
+    private double[] estacionesFavAM ;
+    private double[] estacionesFavFM;
 
     public Radio () {
         this.encendido = false;
         this.estacion = 100.0;
         this.isAM = true;
-        this.estacionesFavAM = new ArrayList<>();
-        this.estacionesFavFM = new ArrayList<>();
+        this.estacionesFavAM =  new double[6];
+        this.estacionesFavFM = new double[6];
     }
 
     @Override
@@ -47,9 +47,9 @@ public class Radio implements iRadio{
     @Override
     public double getFavorito(int posicion) {
         if (this.isAM){
-            return this.estacionesFavAM.get(posicion);
+            return this.estacionesFavAM[posicion];
         } else {
-            return this.estacionesFavFM.get(posicion);
+            return this.estacionesFavFM[posicion];
         }
     }
 
@@ -84,49 +84,24 @@ public class Radio implements iRadio{
     public void setFavorito(int posicion) {
         double estacion = this.estacion;
         if (this.isAM) {
-            this.estacionesFavAM.add(posicion, estacion);
+            this.estacionesFavAM[posicion] = estacion;
         } else {
-            this.estacionesFavFM.add(posicion, estacion);
+            this.estacionesFavFM[posicion] = estacion;
         }
     }
 
-    public double getEstacion() {
-        return estacion;
+    @Override
+    public boolean getIsOn() {
+        return this.encendido;
     }
 
-    public boolean isEncendido() {
-        return encendido;
+    @Override
+    public boolean getIsAm() {
+        return this.isAM;
     }
 
-    public void setEncendido(boolean encendido) {
-        this.encendido = encendido;
-    }
-
-    public void setEstacion(double estacion) {
-        this.estacion = estacion;
-    }
-
-    public boolean isAM() {
-        return isAM;
-    }
-
-    public void setAM(boolean AM) {
-        isAM = AM;
-    }
-
-    public ArrayList<Double> getEstacionesFavAM() {
-        return estacionesFavAM;
-    }
-
-    public void setEstacionesFavAM(ArrayList<Double> estacionesFavAM) {
-        this.estacionesFavAM = estacionesFavAM;
-    }
-
-    public ArrayList<Double> getEstacionesFavFM() {
-        return estacionesFavFM;
-    }
-
-    public void setEstacionesFavFM(ArrayList<Double> estacionesFavFM) {
-        this.estacionesFavFM = estacionesFavFM;
+    @Override
+    public double getFrecuencia (){
+        return this.estacion;
     }
 }

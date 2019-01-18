@@ -44,5 +44,9 @@ public interface iRadio
      */
     double getFavorito(int posicion);
 
+    boolean getIsOn();
 
+    double getFrecuencia();
+
+    boolean getIsAm ();
 }
