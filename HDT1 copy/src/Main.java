@@ -83,7 +83,7 @@ public class Main {
 
 
                     }
-                } while(myRadio.isEncendido());
+                } while(myRadio.getIsOn());
 
                     break;
 
