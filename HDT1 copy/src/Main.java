@@ -18,7 +18,7 @@ public class Main {
             "\t6. Guardar estación favorita.";
 
     public static void main(String[] args) {
-        Radio myRadio = new Radio();
+        iRadio myRadio = new Radio();
         boolean continuar = true;
         String am = "AM";
 
