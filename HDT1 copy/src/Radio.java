@@ -72,12 +72,13 @@ public class Radio implements iRadio{
     }
 
     @Override
-    public void encendidoRadio() {
-        if (encendido){
+    public boolean encendidoRadio() {
+        if (this.encendido){
             this.encendido = false;
         } else {
             this.encendido = true;
         }
+        return this.encendido;
     }
 
     @Override
@@ -88,20 +89,5 @@ public class Radio implements iRadio{
         } else {
             this.estacionesFavFM[posicion] = estacion;
         }
-    }
-
-    @Override
-    public boolean getIsOn() {
-        return this.encendido;
-    }
-
-    @Override
-    public boolean getIsAm() {
-        return this.isAM;
-    }
-
-    @Override
-    public double getFrecuencia (){
-        return this.estacion;
     }
 }

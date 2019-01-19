@@ -18,7 +18,7 @@ public interface iRadio
      * Metodo para manejar el encendido y apagado de la radio
      *
      */
-    void encendidoRadio();
+    boolean encendidoRadio();
 
     /**
      * Metodo para subir la frecuencia que se encuentra actualmente en la radio.

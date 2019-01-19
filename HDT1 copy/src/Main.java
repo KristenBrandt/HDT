@@ -79,12 +79,8 @@ public class Main {
                             System.out.println("Se guardo exitosamente la estacion selecionada");
                             break;
 
-
-
-
                     }
-                } while(myRadio.getIsOn());
-
+                } while(myRadio.encendidoRadio() == false);
                     break;
 
                 //Salir.
